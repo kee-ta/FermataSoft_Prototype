@@ -6,6 +6,7 @@ namespace DPUtils.Systems.DateTime
 {
     public class TimeManager : MonoBehaviour
     {
+         
         public Action seasonChange;
         [Header("Date & Time Settings")]
         [Range(1, 28)]
@@ -37,6 +38,7 @@ namespace DPUtils.Systems.DateTime
             Debug.Log($"Pumpkin Harvest: {DateTime.PumpkinHarvest(10)}");
             Debug.Log($"Start of a Season: {DateTime.StartOfSeason(1, 3)}");
             Debug.Log($"Starting of Winter: {DateTime.StartOfWinter(3)}");
+
         }
 
         private void Start()
@@ -58,6 +60,7 @@ namespace DPUtils.Systems.DateTime
         void Tick()
         {
             AdvanceTime();
+            Mathf.Abs(0);
         }
 
         void AdvanceTime()
