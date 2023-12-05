@@ -1,4 +1,0 @@
-repository "FermataSoft_Prototype@Kitanae@cloud"
-  path "/"
-    br "/main"
-    co "/main"
