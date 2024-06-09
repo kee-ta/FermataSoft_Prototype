@@ -11,7 +11,11 @@ public class LerpToTarget : MonoBehaviour
     void Start()
     {
         //LeanTween.followDamp(this.transform,targetPos.transform,LeanProp.position,1f);
-        LeanTween.move(this.gameObject,targetPos.transform,1f).setEaseInOutExpo();
+        LeanTween.move(this.gameObject,targetPos.transform,.8f).setEaseInOutExpo();
+    }
+
+    private void OnEnable() {
+        LeanTween.move(this.gameObject,targetPos.transform,.8f).setEaseInOutExpo();
     }
 
     // Update is called once per frame

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using System;
 
 public static class LeanTweenExt
@@ -156,7 +157,9 @@ public static class LeanTweenExt
     public static LTDescr LeanValue(this GameObject gameObject, Action<Color> callOnUpdate, Color from, Color to, float time) { return LeanTween.value(gameObject, callOnUpdate, from, to, time); }
     public static LTDescr LeanValue(this GameObject gameObject, Action<Vector2> callOnUpdate, Vector2 from, Vector2 to, float time) { return LeanTween.value(gameObject, callOnUpdate, from, to, time); }
     public static LTDescr LeanValue(this GameObject gameObject, Action<Vector3> callOnUpdate, Vector3 from, Vector3 to, float time) { return LeanTween.value(gameObject, callOnUpdate, from, to, time); }
+public static LTDescr LeanTMPAlpha(this TextMeshProUGUI txt, float to, float time) { return LeanTween.LeanTMPAlpha(txt, to, time); }
 
+public static LTDescr LeanTMPColor(this TextMeshProUGUI txt, Color to, float time) { return LeanTween.LeanTMPColor(txt, to, time); }
     public static void LeanSetPosX(this Transform transform, float val){
         transform.position = new Vector3(val, transform.position.y, transform.position.z);
     }

@@ -144,6 +144,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using TMPro;
 
 public enum TweenAction{
     MOVE_X,
@@ -381,7 +382,19 @@ public class LeanTween : MonoBehaviour {
     }
 
     private static int maxTweenReached;
+public static LTDescr LeanTMPAlpha(TextMeshProUGUI txt, float to, float time)
+{
+    var color = txt.color;
+    var fadeoutcolor = new Color(color.r,color.g,color.b,to);
+    return LeanTween.value(txt.gameObject, color, fadeoutcolor, time).setOnUpdate(co => txt.color = co);
+}
 
+public static LTDescr LeanTMPColor(TextMeshProUGUI txt, Color to, float time)
+{
+    var color = txt.color;
+    var fadeoutcolor = to;
+    return LeanTween.value(txt.gameObject, color, fadeoutcolor, time).setOnUpdate(co => txt.color = co);
+}
     public static void update() {
         if(frameRendered != Time.frameCount){ // make sure update is only called once per frame
             init();
